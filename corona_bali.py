@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+import requests
+from bs4 import BeautifulSoup
+from lxml import html
+import sys
+
+proxyku = {
+        'https':'https://icams:PASSWORD@proxy.bpsbali.id:3128/'
+        }
+
+headerku = {
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
+        }
+#working with ajustment
+URL0 = 'https://infocorona.baliprov.go.id' 
+#working
+URL1 = 'https://infocorona.baliprov.go.id/API/good_api_manual.php' 
+URL2 = 'https://infocorona.baliprov.go.id/API/good_api_lagi.php'
+r = requests.post(URL2, headers=headerku)
+soup = BeautifulSoup(r.text,'lxml')
+
+#kasus positif
+t7 = soup.find_all('div')[7]
+t71 = t7.find_all('div')[1]
+positif_corona = t71.find('h3').text
+#perawatan
+t11 = soup.find_all('div')[11]
+perawatan_corona = t11.find('h3').text
+perawatan_corona = perawatan_corona.split()
+
+#Pasien Sembuh
+t15 = soup.find_all('div')[15]
+sembuh_corona = t15.find('h3').text
+sembuh_corona = sembuh_corona.split()
+
+#pasien meninggal
+t19 = soup.find_all('div')[19]
+meninggal = t19.find('h3').text
+meninggal = meninggal.split()
+
+tanggal = soup.find('p').text.split()
+
+print("Jumlah positif korona terkonfirmasi: " + positif_corona)
+print("Jumlah pasien korona dalam perawatan: " + perawatan_corona[0]+ " Orang")
+print("Jumlah pasien korona yang sembuh: " + sembuh_corona[0]+ " Orang")
+print("Jumlah pasien korona yang meninggal: "+ meninggal[0] + " Orang")
+print("Data diperbaharui pada tanggal: ",tanggal[3],tanggal[4],tanggal[5])
