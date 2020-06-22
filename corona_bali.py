@@ -3,6 +3,10 @@ import requests
 from bs4 import BeautifulSoup
 from lxml import html
 import sys
+import json
+proxyku = {
+        'https':'https://icams:PASSWORD@proxy.bpsbali.id:3128/'
+        }
 
 headerku = {
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36'
@@ -18,7 +22,7 @@ soup = BeautifulSoup(r.text,'lxml')
 #kasus positif
 t7 = soup.find_all('div')[7]
 t71 = t7.find_all('div')[1]
-positif_corona = t71.find('h3').text
+positif_corona = t71.find('h3').text.split()
 #perawatan
 t11 = soup.find_all('div')[11]
 perawatan_corona = t11.find('h3').text
@@ -36,7 +40,7 @@ meninggal = meninggal.split()
 
 tanggal = soup.find('p').text.split()
 
-print("Jumlah positif korona terkonfirmasi: " + positif_corona)
+print("Jumlah positif korona terkonfirmasi: " + positif_corona[0] + " Orang")
 print("Jumlah pasien korona dalam perawatan: " + perawatan_corona[0]+ " Orang")
 print("Jumlah pasien korona yang sembuh: " + sembuh_corona[0]+ " Orang")
 print("Jumlah pasien korona yang meninggal: "+ meninggal[0] + " Orang")
