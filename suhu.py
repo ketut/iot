@@ -14,7 +14,7 @@ r_url2 = requests.get(URL2)
 if r_url1.status_code == 200:
     r1 = r_url1.json()
     suhu1 = {'currently':[{'text': r1[0]['WeatherText'],'suhu': r1[0]['Temperature']['Metric']['Value']}]}
-    with open('suhu1.json', 'w') as osuhu1:
+    with open('public/suhu1.json', 'w') as osuhu1:
         json.dump(suhu1, osuhu1)
     print("JSON suhu1 created")
 else:
@@ -23,7 +23,7 @@ else:
 if r_url2.status_code == 200:
     r2=r_url2.json()
     suhu2 = {'daily':[{'text':r2['Headline']['Text'],'min':r2['DailyForecasts'][0]['Temperature']['Minimum']['Value'],'max':r2['DailyForecasts'][0]['Temperature']['Maximum']['Value'],'day':r2['DailyForecasts'][0]['Day']['IconPhrase'],'night':r2['DailyForecasts'][0]['Night']['IconPhrase']}]}
-    with open('suhu2.json', 'w') as osuhu2:
+    with open('public/suhu2.json', 'w') as osuhu2:
         json.dump(suhu2, osuhu2)
     print("JSON suhu2 created")
 else:
