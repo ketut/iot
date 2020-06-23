@@ -18,11 +18,11 @@ jobs:
       with:
         python-version: '3.7'
     - name: Install dependencies
-      run: |
+      run: 
         python -m pip install --upgrade pip
         pip install requests lxml bs4
     - name: Build and publish
-      run: |
+      run: 
         python build.py
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
