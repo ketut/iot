@@ -22,12 +22,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests lxml bs4
     - name: Build and publish
-      run: 
-        npm install -g netlify-cli@2.50.0
-        netlify deploy --prod --dir=/
-    - name: Build an API
-      run:
-        python run.py
+       run:
+        python build.py
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
