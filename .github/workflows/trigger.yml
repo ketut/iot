@@ -19,8 +19,7 @@ jobs:
       with:
         node-version: 10.x
 
-    - run: npm ci
-    - run: npm run build
+ 
 
     - run: npm install -g netlify-cli@2.50.0
     - run: netlify deploy --prod --dir=public
