@@ -57,3 +57,20 @@ c_positif.write(positif_corona[0] + "\n")
 c_positif.write(perawatan_corona[0])
 c_positif.close()
 print("Done")
+
+html_head = """
+<html><head><title>covid19</title></head>
+<body>
+"""
+html_foot = """
+</body>
+</html>
+"""
+with open("index.html", "w") as file:
+    file.write(html_head)
+    file.write("\n")
+    file.write(positif_corona[0])
+    file.write("<br>")
+    file.write(perawatan_corona[0])
+    file.write(html_foot)
+    file.close()
