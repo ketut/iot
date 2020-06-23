@@ -87,15 +87,20 @@ with open("corona.html", "w") as file:
     file.write("<br>")
     file.write(html_foot)
     file.close()
+    print("corona.html writed")
 
 with open("index.html", "w") as file:
     file.write(html_head)
     file.write("<a href=\"corona.html\">Info Corona Bali</a>")
     file.write(html_foot)
     file.close()
+    print("index.html writed")
+        
 
 tanggal = str(tanggal[3])+" "+str(tanggal[4])+" "+str(tanggal[5])
 data = {'covid':[{'infected': positif_corona[0],'being treated': perawatan_corona[0],'recovered':sembuh_corona[0], 'fatal':meninggal[0],'tanggal':tanggal}]}
 
 with open('covid.json', 'w') as outfile:
     json.dump(data, outfile)
+print("JSON created")
+print("Everything must be OK now")
