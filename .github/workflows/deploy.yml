@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron: '*/60 * * * *'
+    - cron: "*/60 * * * *"
       
 jobs:
   deploy:
@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: 10.x
     - run: npm install -g netlify-cli@2.50.0
-    - run: netlify deploy 
+    - run: netlify deploy
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
