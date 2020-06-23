@@ -44,7 +44,7 @@ print("Jumlah positif korona terkonfirmasi: " + positif_corona[0] + " Orang")
 print("Jumlah pasien korona dalam perawatan: " + perawatan_corona[0]+ " Orang")
 print("Jumlah pasien korona yang sembuh: " + sembuh_corona[0]+ " Orang")
 print("Jumlah pasien korona yang meninggal: "+ meninggal[0] + " Orang")
-print("Data diperbaharui pada tanggal: ",tanggal[3],tanggal[4],tanggal[5])
+print("Data diperbaharui pada tanggal: {} {} {}".format(tanggal[3],tanggal[4],tanggal[5]))
 
 
 
