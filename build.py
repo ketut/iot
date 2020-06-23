@@ -70,7 +70,7 @@ with open("corona.html", "w") as file:
     file.write(html_head)
     file.write("\n")
     file.write("Jumlah Kasus Positif Korono: ") 
-    file.write(+ positif_corona[0])
+    file.write(positif_corona[0])
     file.write("<br>")
     file.write("Jumlah pasien dalam perawatan :")
     file.write(perawatan_corona[0])
