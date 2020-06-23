@@ -22,9 +22,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests lxml bs4
     - name: Build and publish
+      run: |
+        python build.py
       env:
         NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      run: |
-        python build.py
-        netlify deploy --prod --dir=/
