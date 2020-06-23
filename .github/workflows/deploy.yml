@@ -23,7 +23,7 @@ jobs:
         pip install requests lxml bs4
     - name: Build and publish
       run: npm install -g netlify-cli@2.50.0
-      run: netlify deploy --prod --dir=public
+      run: netlify deploy --prod --dir=/
       run: 
         python build.py
       env:
