@@ -66,11 +66,24 @@ html_foot = """
 </body>
 </html>
 """
-with open("index.html", "w") as file:
+with open("corona.html", "w") as file:
     file.write(html_head)
     file.write("\n")
-    file.write(positif_corona[0])
+    file.write("Jumlah Kasus Positif Korono: ", positif_corona[0])
     file.write("<br>")
-    file.write(perawatan_corona[0])
+    file.write("Jumlah pasien dalam perawatan :", perawatan_corona[0])
+    file.write("<br>")
+    file.write("Jumlah pasien sudah sembuh : ", meninggal[0])
+    file.write("<br>")
+    file.write("Data diperbaharui tanggal :", tanggal[3],tanggal[4],tanggal[5])
+    file.write("<br>")
+    file.write(html_foot)
+    file.close()
+
+with open("index.html", "w") as file:
+    file.write(html_head)
+    file.write("<a href="index.html">back to index</a>")
+    file.write("<br>")
+    file.write("<a href="corona.html">Info Corona Bali</a>")
     file.write(html_foot)
     file.close()
