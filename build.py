@@ -69,6 +69,8 @@ html_foot = """
 with open("corona.html", "w") as file:
     file.write(html_head)
     file.write("\n")
+    file.write("<a href=\"index.html\">back to index</a>")
+    file.write("<br>")
     file.write("Jumlah Kasus Positif Korono: ") 
     file.write(positif_corona[0])
     file.write("<br>")
@@ -88,8 +90,6 @@ with open("corona.html", "w") as file:
 
 with open("index.html", "w") as file:
     file.write(html_head)
-    file.write("<a href=\"index.html\">back to index</a>")
-    file.write("<br>")
     file.write("<a href=\"corona.html\">Info Corona Bali</a>")
     file.write(html_foot)
     file.close()
