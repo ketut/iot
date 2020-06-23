@@ -46,17 +46,7 @@ print("Jumlah pasien korona yang sembuh: " + sembuh_corona[0]+ " Orang")
 print("Jumlah pasien korona yang meninggal: "+ meninggal[0] + " Orang")
 print("Data diperbaharui pada tanggal: ",tanggal[3],tanggal[4],tanggal[5])
 
-filename = 'positif.json'
-with open(filename, 'w') as f1:
-    json.dump(positif_corona[0], f1, ensure_ascii=False)
-filename = 'perawatan.json'
-with open(filename,'w') as f2:
-    json.dump(perawatan_corona[0],f2,ensure_ascii=False)
-c_positif = open('covid.txt','w')
-c_positif.write(positif_corona[0] + "\n")
-c_positif.write(perawatan_corona[0])
-c_positif.close()
-print("Done")
+
 
 html_head = """
 <html><head><title>covid19</title></head>
@@ -66,7 +56,7 @@ html_foot = """
 </body>
 </html>
 """
-with open("corona.html", "w") as file:
+with open("public/corona.html", "w") as file:
     file.write(html_head)
     file.write("\n")
     file.write("<a href=\"index.html\">back to index</a>")
@@ -89,7 +79,7 @@ with open("corona.html", "w") as file:
     file.close()
     print("corona.html writed")
 
-with open("index.html", "w") as file:
+with open("public/index.html", "w") as file:
     file.write(html_head)
     file.write("<a href=\"corona.html\">Info Corona Bali</a>")
     file.write(html_foot)
