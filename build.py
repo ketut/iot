@@ -85,7 +85,7 @@ with open("public/index.html", "w") as file:
 
 data = {'infected': positif_corona[0],'being treated': perawatan_corona[0],'recovered':sembuh_corona[0], 'fatal':meninggal[0],'tanggal':tanggal}
 
-with open('public/api/v1/b7b1dc541ba98a721295e3d2a9079e7a_covid.json', 'w') as outfile:
+with open('public/api/v1/covid_bali.json', 'w') as outfile:
     json.dump(data, outfile)
 print("JSON created")
 print("Everything must be OK now")
