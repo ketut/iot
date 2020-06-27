@@ -55,7 +55,7 @@ with open("public/corona.html", "w") as file:
     file.write(html_head)
     file.write("\n")
     file.write("<a href=\"index.html\">back to index</a>")
-    file.write("<br">
+    file.write("<br">)
     file.write("Perkembangan Kasus Penyebaran COVID-19 di Provinsi Bali")
     file.write("<br>")
     file.write("Jumlah kasus terkonfirmasi positif korona: ") 
