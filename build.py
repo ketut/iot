@@ -10,7 +10,7 @@ headerku = {
         }
 
 #working
-URL2 = 'https://infocorona.baliprov.go.id/API/good_api_lagi.php'
+URL2 = 'https://infocorona.baliprov.go.id/API/pendataan/localdb_good_api.php'
 r = requests.post(URL2, headers=headerku)
 soup = BeautifulSoup(r.text,'lxml')
 
